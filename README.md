@@ -1,6 +1,6 @@
 # gns3_tests
 
-## gns3_docker
+## gns3
 
 Escenario docker-compose para desplegar los artefactos necesarios
 
