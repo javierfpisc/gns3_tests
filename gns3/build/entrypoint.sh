@@ -1,5 +1,8 @@
 #!/bin/bash
 
-#Uso exec para lanzar un proceso independiente de bucle infinito
-exec bash -c "while true;do sleep 10;done"
+#Si hay iptables persistentes se cargan
+[ -f /etc/iptables/rules.v4 ] && iptables-restore < /etc/iptables/rules.v4
+
+#Uso exec para una shell
+exec bash
 

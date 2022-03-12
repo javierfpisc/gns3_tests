@@ -8,20 +8,18 @@ services:
      ENVPATH: host.env
   entrypoint: ["bash", "-c", "exit"]
   networks:
-   wan:
+   config:
  router:
   build:
     context: build
     args:
      ENVPATH: router.env
   entrypoint: ["bash", "-c", "exit"]
-  networks:
-   wan:
 networks:
-  wan:
+  config:
     driver: bridge
     driver_opts:
-     com.docker.network.bridge.name: gns3_wan
+     com.docker.network.bridge.name: gns3_config
     ipam:
      config:
        - subnet: 192.168.222.0/24
